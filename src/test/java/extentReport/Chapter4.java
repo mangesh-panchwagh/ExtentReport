@@ -8,7 +8,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-
+//P4 - Understand the log levels in extent reports | Extent Reports |
 // ExtentReports class will create reports for you
 public class Chapter4 {
 
