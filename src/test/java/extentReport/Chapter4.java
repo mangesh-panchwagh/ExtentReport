@@ -10,7 +10,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 // ExtentReports class will create reports for you
-public class Chapter3 {
+public class Chapter4 {
 
 	public static void main(String[] args) throws Exception {
 		ExtentReports extentReports = new ExtentReports(); // Like Engine
@@ -19,21 +19,32 @@ public class Chapter3 {
 		
 		ExtentSparkReporter sparkReporter = new ExtentSparkReporter(file);
 		extentReports.attachReporter(sparkReporter);
-		
+		/*
 		ExtentTest test1 = extentReports.createTest("Test 1");
 		test1.pass("This is pass");
-		
-		ExtentTest test2 = extentReports.createTest("Test 2");
-		test2.log(Status.FAIL, "This is failed");
-		
-		//extentReports.createTest("Test 3").log(Status.SKIP, "This is skipped");
-		extentReports.createTest("Test 3").skip("This is skipped");
+		*/
+		// We use method chaining
+		extentReports.createTest("Test 1")
+			.log(Status.INFO, "info1")
+			.log(Status.INFO, "info2")
+			.log(Status.INFO, "info3")
+			.log(Status.PASS, "pass")
+			.log(Status.WARNING, "warning")
+			.log(Status.WARNING, "pass")
+			.log(Status.SKIP, "skip")
+			.log(Status.FAIL, "fail1")
+			.log(Status.FAIL, "fail1");
+			
+//		ORDER : 
+//		FAIL
+//		SKIP
+//		WARNING
+//		PASS
+//		INFO
 		
 		extentReports.flush();
 		Desktop.getDesktop().browse(new File("report.html").toURI());
-		
-		
-		
+
 	}
 }
 
