@@ -39,11 +39,11 @@ public class Chapter10 {
 		
 		sparkReporter.viewConfigurer().viewOrder().as(new ViewName[] {
 				
-				ViewName.EXCEPTION,
 				ViewName.DASHBOARD,
+				ViewName.TEST,
+				ViewName.EXCEPTION,
 				ViewName.CATEGORY,
 				ViewName.DEVICE,
-				ViewName.TEST,
 				ViewName.AUTHOR
 				
 		}).apply();
